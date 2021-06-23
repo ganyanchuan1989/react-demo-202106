@@ -1,7 +1,8 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin"); //installed via npm
-const webpack = require("webpack"); //to access built-in plugins
+const HtmlWebpackPlugin = require("html-webpack-plugin"); // installed via npm
+const webpack = require("webpack"); // to access built-in plugins
 const path = require("path");
 const ESLintPlugin = require("eslint-webpack-plugin");
+
 module.exports = {
   mode: "development",
   entry: ["react-hot-loader/patch", "./src/index.jsx"],
@@ -20,7 +21,7 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.(js|jsx)$/, use: "babel-loader" },
+      { test: /\.(js|jsx)$/, exclude: /node_modules/, use: "babel-loader" },
       {
         test: /\.less$/i,
         use: [
