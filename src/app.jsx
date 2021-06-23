@@ -1,9 +1,13 @@
 import React from "react";
-import { hot } from "react-hot-loader/root";
+// import { hot } from "react-hot-loader/root";
 import "./app.less";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import Counter from "./Counter";
+import Home from "./views/Home";
 
 function App() {
+  console.log(">>app");
   return (
     <Router>
       <div>
@@ -18,6 +22,9 @@ function App() {
             <li>
               <Link to="/users">Users</Link>
             </li>
+            <li>
+              <Link to="/counter">counter</Link>
+            </li>
           </ul>
         </nav>
 
@@ -30,6 +37,9 @@ function App() {
           <Route path="/users">
             <Users />
           </Route>
+          <Route path="/counter">
+            <Counter />
+          </Route>
           <Route path="/">
             <Home />
           </Route>
@@ -39,21 +49,14 @@ function App() {
   );
 }
 
-function Home() {
-  return (
-    <h2>
-      fdafafda
-      <input />
-    </h2>
-  );
-}
-
 function About() {
-  return <h2>About</h2>;
+  return <h2>Aboutsssss</h2>;
 }
 
 function Users() {
   return <h2>Users</h2>;
 }
 
-export default hot(App);
+// export default hot(App);
+
+export default App;
