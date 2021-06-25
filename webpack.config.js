@@ -5,17 +5,21 @@ const ESLintPlugin = require("eslint-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: ["react-hot-loader/patch", "./src/index.jsx"],
+  entry: [
+    "webpack-hot-middleware/client?reload=true",
+    "react-hot-loader/patch",
+    "./src/index.jsx",
+  ],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "my-first-webpack.bundle.js",
   },
-  devServer: {
-    hot: true,
-    contentBase: path.join(__dirname, "static"),
-    compress: true,
-    port: 9000,
-  },
+  // devServer: {
+  //   hot: true,
+  //   contentBase: path.join(__dirname, "static"),
+  //   compress: true,
+  //   port: 9000,
+  // },
   resolve: {
     extensions: [".js", ".jsx"],
   },
@@ -48,6 +52,8 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({ template: "./src/index.html" }),
     new ESLintPlugin({}),
   ],

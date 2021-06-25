@@ -1,4 +1,8 @@
 {
-    "editor.formatOnSave": true,
-    "prettier.jsxSingleQuote": true
+  "editor.formatOnSave": true,
+  "prettier.jsxSingleQuote": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  }
 }

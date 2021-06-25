@@ -7,7 +7,6 @@ import Counter from "./Counter";
 import Home from "./views/Home";
 
 function App() {
-  console.log(">>app");
   return (
     <Router>
       <div>
@@ -27,7 +26,7 @@ function App() {
             </li>
           </ul>
         </nav>
-
+        fdssfdafda
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
@@ -50,7 +49,12 @@ function App() {
 }
 
 function About() {
-  return <h2>Aboutsssss</h2>;
+  return (
+    <div>
+      <h2>Aboutssfsd</h2>
+      <input />
+    </div>
+  );
 }
 
 function Users() {
