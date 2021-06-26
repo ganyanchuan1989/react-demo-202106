@@ -32,6 +32,11 @@ export const getRouteData = () => {
         import(/* webpackChunkName: "error" */ "@/views/imgdemo")
       ),
     },
+    "/cssdemo": {
+      module: lazyLoad(() =>
+        import(/* webpackChunkName: "error" */ "@/views/cssdemo")
+      ),
+    },
     "*": {
       module: lazyLoad(() =>
         import(/* webpackChunkName: "404" */ "@/components/404")
