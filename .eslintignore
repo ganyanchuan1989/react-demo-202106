@@ -2,3 +2,4 @@ dev.js
 dev2.js
 build/
 postcss.config.js
+mock/
