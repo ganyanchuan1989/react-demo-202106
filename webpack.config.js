@@ -55,6 +55,6 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({ template: "./src/index.html" }),
-    new ESLintPlugin({}),
+    new ESLintPlugin({ extensions: ["js", "jsx"] }),
   ],
 };

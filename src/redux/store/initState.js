@@ -5,6 +5,6 @@ export default {
   /* 用户 session */
   userData: {
     isLoginSuccess: false,
-    userName: '',
+    userName: "",
   },
 };

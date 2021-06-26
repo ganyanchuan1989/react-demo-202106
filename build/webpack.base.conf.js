@@ -78,6 +78,7 @@ module.exports = {
     ],
   },
   plugins: [
+    // new ESLintPlugin({ extensions: ["js", "jsx"] }),
     new ESLintPlugin({ extensions: ["js", "jsx"] }),
     new webpack.DefinePlugin({
       __DEV__: env === "development",

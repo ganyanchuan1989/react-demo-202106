@@ -18,4 +18,5 @@ module.exports = {
   staticDir: path.join(rootPath, "static"), // 无需处理的静态资源目录,
   mockDir: path.join(rootPath, "mock"), // mock 数据目录
   build: build, // 配置相关
+  env,
 };

@@ -11,7 +11,7 @@ export function checkLogin() {
 }
 
 export function checkRole(roleCode) {
-  return function(nextState, replace, next) {
+  return function (nextState, replace, next) {
     // if (!checkUserLogin()) {
     //   message.error('用户未登录，无法访问该页面');
     //   history.replace('/');
