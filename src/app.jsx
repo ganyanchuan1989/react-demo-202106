@@ -3,64 +3,23 @@ import React from "react";
 import "./app.less";
 import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import Counter from "./Counter";
-import Home from "./views/Home";
+import BasicLayout from "./layouts/BasicLayout";
+import "ASSET/less/normalize.less";
+import "ASSET/less/index.less";
+
+if (__DEV__) {
+  console.info("[当前环境] 开发环境");
+}
+if (__PROD__) {
+  console.info("[当前环境] 线上环境");
+}
 
 function App() {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-            <li>
-              <Link to="/counter">counter</Link>
-            </li>
-          </ul>
-        </nav>
-        fdssfdafda
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/counter">
-            <Counter />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
+      <Route path="/" component={BasicLayout} />
     </Router>
   );
 }
-
-function About() {
-  return (
-    <div>
-      <h2>Aboutssfsd</h2>
-      <input />
-    </div>
-  );
-}
-
-function Users() {
-  return <h2>Users</h2>;
-}
-
-// export default hot(App);
 
 export default App;

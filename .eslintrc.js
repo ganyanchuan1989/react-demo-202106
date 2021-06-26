@@ -5,6 +5,10 @@ module.exports = {
     es6: true,
     jquery: true,
   },
+  globals: {
+    __DEV__: true,
+    __PROD__: true,
+  },
   parser: "babel-eslint",
   extends: ["airbnb", "prettier", "plugin:react/recommended"],
   plugins: ["prettier"],
@@ -41,5 +45,11 @@ module.exports = {
     "no-shadow": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "import/no-unresolved": 0,
+    "react/jsx-filename-extension": 0,
+    "react/display-name": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/no-deprecated": 0,
+    "react/destructuring-assignment": 0,
   },
 };
