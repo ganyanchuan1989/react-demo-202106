@@ -5,7 +5,8 @@ class Welcome extends React.Component {
   render() {
     return (
       <div>
-        <div>HelloWorld</div>
+        <div>HelloWorlds</div>
+        <input />
         <Button>aaa</Button>
       </div>
     );
