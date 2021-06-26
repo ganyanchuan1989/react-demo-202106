@@ -1,6 +1,6 @@
 import Main from "@/views/main";
 import Counter from "@/views/counter";
-import lazyLoad from "../layouts/lazyLoad";
+import lazyLoad from "@/components/lazyLoad";
 
 /**
  * router 有加载有同步加载和异步加载

@@ -1,6 +1,6 @@
 import React from "react";
 import { Spin } from "antd";
-import Bundle from "./Bundle";
+import Bundle from "@/components/Bundle";
 
 const Loading = () => (
   <div style={{ textAlign: "center", fontSize: "large", padding: "20px" }}>
