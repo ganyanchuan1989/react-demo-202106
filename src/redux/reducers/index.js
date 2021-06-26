@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux';
-import store from 'STORE';
-import userReducer from 'REDUCER/user';
+import { combineReducers } from "redux";
+import store from "@/redux/store";
+import userReducer from "@/redux/reducers/user";
 // ================================
 // 同步的 Reducers（即应用初始化所必需的）
 // ================================

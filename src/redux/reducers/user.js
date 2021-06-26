@@ -1,5 +1,5 @@
-import createReducer from 'UTIL/createReducer';
-import { ACTION_HANDLERS } from 'ACTION/user';
-import initState from 'STORE/initState';
+import createReducer from "@/utils/createReducer";
+import { ACTION_HANDLERS } from "@/redux/actions/user";
+import initState from "@/redux/store/initState";
 
 export default createReducer(initState.userData, ACTION_HANDLERS);

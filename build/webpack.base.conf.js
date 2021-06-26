@@ -24,21 +24,7 @@ module.exports = {
     modules: [src, "node_modules"],
     extensions: [".js", ".jsx"],
     alias: {
-      // ================================
-      // 自定义路径别名
-      // ================================
-      ASSET: path.join(src, "assets"),
-      COMPONENT: path.join(src, "components"),
-      ACTION: path.join(src, "redux/actions"),
-      REDUCER: path.join(src, "redux/reducers"),
-      STORE: path.join(src, "redux/store"),
-      ROUTE: path.join(src, "routes"),
-      SERVICE: path.join(src, "services"),
-      UTIL: path.join(src, "utils"),
-      HOC: path.join(src, "utils/HoC"),
-      MIXIN: path.join(src, "utils/mixins"),
-      VIEW: path.join(src, "views"),
-      CONFIG: path.join(build, "config"),
+      "@": src,
     },
   },
   module: {

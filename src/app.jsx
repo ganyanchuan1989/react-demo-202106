@@ -1,11 +1,13 @@
 import React from "react";
-// import { hot } from "react-hot-loader/root";
 import "./app.less";
+import { Provider } from "react-redux";
+import { ConfigProvider } from "antd";
 import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
-
+import store from "@/redux/store";
+import zhCN from "antd/lib/locale/zh_CN";
 import BasicLayout from "./layouts/BasicLayout";
-import "ASSET/less/normalize.less";
-import "ASSET/less/index.less";
+import "@/assets/less/normalize.less";
+import "@/assets/less/index.less";
 
 if (__DEV__) {
   console.info("[当前环境] 开发环境");
@@ -16,9 +18,15 @@ if (__PROD__) {
 
 function App() {
   return (
-    <Router>
-      <Route path="/" component={BasicLayout} />
-    </Router>
+    <Provider store={store}>
+      <ConfigProvider locale={zhCN}>
+        <Router>
+          <div>
+            <Route path="/" component={BasicLayout} />
+          </div>
+        </Router>
+      </ConfigProvider>
+    </Provider>
   );
 }
 

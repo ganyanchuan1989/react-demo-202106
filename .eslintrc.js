@@ -51,5 +51,7 @@ module.exports = {
     "react/jsx-props-no-spreading": 0,
     "react/no-deprecated": 0,
     "react/destructuring-assignment": 0,
+    "import/prefer-default-export": 0,
+    "no-restricted-syntax": 0,
   },
 };

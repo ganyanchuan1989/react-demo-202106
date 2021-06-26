@@ -1,13 +1,13 @@
-import userService from 'SERVICE/userService';
+import userService from "@/services/userService";
 
 // ================================
 // Action Type
 // ================================
-const LOG_IN = 'LOG_IN';
-const LOG_OUT = 'LOG_OUT';
+const LOG_IN = "LOG_IN";
+const LOG_OUT = "LOG_OUT";
 
 const login = (loginName, password, userAuthToken) => (dispatch) => {
-  console.log('login');
+  console.log("login");
   userService
     .login({
       loginName: loginName,
@@ -16,7 +16,7 @@ const login = (loginName, password, userAuthToken) => (dispatch) => {
     })
     .then(
       (res) => {
-        console.log('login success');
+        console.log("login success");
         // 登录成功
         dispatch({
           type: LOG_IN,
@@ -26,7 +26,7 @@ const login = (loginName, password, userAuthToken) => (dispatch) => {
         });
       },
       (err) => {
-        console.log('err:', err);
+        console.log("err:", err);
         // dispatch(loginFailed(err));
       }
     );
@@ -42,10 +42,7 @@ const logout = (token) => (dispatch) => {
 };
 
 /* default 导出所有 Actions Creator */
-export {
-  login,
-  logout,
-};
+export { login, logout };
 
 // ================================
 // Action handlers for Reducer
