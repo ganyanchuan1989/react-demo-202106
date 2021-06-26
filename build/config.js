@@ -8,6 +8,8 @@ const build = path.join(rootPath, "build");
 // 当前环境
 const env = process.env.NODE_ENV.trim();
 
+const analyze = process.env.ANALYZE === "true";
+
 const CONTEXT_PATH = "/HelloWorld/";
 module.exports = {
   CONTEXT_PATH, // 服务器上下文根目录，只在生产环境有效
@@ -19,4 +21,5 @@ module.exports = {
   mockDir: path.join(rootPath, "mock"), // mock 数据目录
   build: build, // 配置相关
   env,
+  analyze,
 };

@@ -6,10 +6,9 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development node build/dev.js",
     "build": "cross-env NODE_ENV=production node build/prod.js",
-    "bundle-analyzer": "cross-env NODE_ENV=production node build/prod.js analyzer",
+    "bundle:analyze": "cross-env NODE_ENV=production ANALYZE=true node build/prod.js",
     "lint": "eslint --ext .js,.jsx src",
-    "lint-fix": "eslint --ext .js,.jsx src --fix",
-    "lint-file": "eslint"
+    "lint:fix": "eslint --ext .js,.jsx src --fix"
   },
   "author": "",
   "license": "ISC",
@@ -37,6 +36,7 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-import": "^1.13.3",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "console-table-printer": "^2.9.0",
     "copy-webpack-plugin": "^9.0.1",
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.6",
@@ -52,6 +52,7 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "eslint-webpack-plugin": "^2.5.4",
     "express": "^4.17.1",
+    "gzip-size": "^6.0.0",
     "happypack": "^5.0.1",
     "html-webpack-plugin": "^5.3.2",
     "less": "^4.1.1",

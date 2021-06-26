@@ -9,10 +9,12 @@ import lazyLoad from "@/components/lazyLoad";
 export const getRouteData = () => {
   const routerConfig = {
     "/": {
-      module: lazyLoad(() => import("@/views")),
+      module: lazyLoad(() => import(/* webpackChunkName: "home" */ "@/views")),
     },
     "/login": {
-      module: lazyLoad(() => import("@/views/login")), // 全局刷新：丢失状态
+      module: lazyLoad(() =>
+        import(/* webpackChunkName: "login" */ "@/views/login")
+      ), // 全局刷新：丢失状态
     },
     "/main": {
       module: Main,
@@ -20,7 +22,16 @@ export const getRouteData = () => {
     "/counter": {
       module: Counter,
     },
-    "*": { module: lazyLoad(() => import("@/components/404")) },
+    "/error": {
+      module: lazyLoad(() =>
+        import(/* webpackChunkName: "error" */ "@/views/error")
+      ),
+    },
+    "*": {
+      module: lazyLoad(() =>
+        import(/* webpackChunkName: "404" */ "@/components/404")
+      ),
+    },
   };
 
   const routeData = [];

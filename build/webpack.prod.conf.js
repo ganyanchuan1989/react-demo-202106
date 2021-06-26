@@ -5,8 +5,6 @@ const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 
 const config = require("./webpack.base.conf");
 
-const { staticDir, dist } = require("./config");
-
 config.mode = "production";
 config.output.filename = "[name].[chunkhash:6].js";
 config.output.chunkFilename = "[name].[chunkhash:6].js";
@@ -37,9 +35,7 @@ config.optimization = {
 
 config.plugins.push(
   new ProgressBarPlugin(),
-  new CleanWebpackPlugin({
-    cleanAfterEveryBuildPatterns: ["dist"],
-  })
+  new CleanWebpackPlugin()
   // new CopyWebpackPlugin({ patterns: [{ from: staticDir, to: dist }] })
 );
 

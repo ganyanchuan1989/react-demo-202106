@@ -2,15 +2,14 @@ import React from "react";
 import "./app.less";
 import { Provider } from "react-redux";
 import { ConfigProvider } from "antd";
-import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import store from "@/redux/store";
 import zhCN from "antd/lib/locale/zh_CN";
 
 import { getRouteData } from "@/routes";
 import ErrorBoundary from "@/components/ErrorBoundary";
 
-import "@/assets/less/normalize.less";
-import "@/assets/less/index.less";
+import "@/assets/less/global.less";
 
 if (__DEV__) {
   console.info("[当前环境] 开发环境");
