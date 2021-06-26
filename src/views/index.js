@@ -1,13 +1,17 @@
 import React from "react";
-import { Button } from "antd";
+import { Link } from "react-router-dom";
 
 class Welcome extends React.Component {
   render() {
     return (
       <div>
-        <div>HelloWorlds</div>
-        <input />
-        <Button>aaa</Button>
+        <Link to="/counter">counter</Link> <br />
+        <Link to="/imgdemo">imgdemo</Link>
+        <br />
+        <Link to="/error">error</Link>
+        <br />
+        <Link to="/cssdemo">cssdemo</Link>
+        <br />
       </div>
     );
   }

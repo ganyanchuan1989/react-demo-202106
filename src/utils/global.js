@@ -1,5 +1,3 @@
-// 头部高度
-const HEADER_HEIGHT = 45;
-const CONTENT_HEIGHT = window.innerHeight - HEADER_HEIGHT;
-
-export { HEADER_HEIGHT, CONTENT_HEIGHT };
+/* 静态资源路径 */
+const PUBLIC_PATH = __DEV__ === "development" ? "/" : "./";
+export { PUBLIC_PATH };

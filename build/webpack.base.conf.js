@@ -16,8 +16,9 @@ module.exports = {
   devtool: "source-map",
   output: {
     path: path.join(dist),
-    filename: "[name].[chunkhash:6].js",
-    chunkFilename: "[name].[chunkhash:6].js",
+    filename: "js/[name].[chunkhash:6].js",
+    chunkFilename: "js/[name].[chunkhash:6].js",
+    assetModuleFilename: "imgs/[chunkhash:6][ext][query]",
     publicPath: PUBLIC_PATH,
   },
   resolve: {
@@ -75,10 +76,31 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        type: "asset",
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024, // 10KB 以下使用 base64
+          },
+        },
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?v=[\d\.]+)?$/,
+        type: "asset",
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024, // 10KB 以下使用 base64
+          },
+        },
+      },
+      {
+        test: /\.(svg)$/,
+        type: "asset/inline",
+      },
     ],
   },
   plugins: [
-    // new ESLintPlugin({ extensions: ["js", "jsx"] }),
     new ESLintPlugin({ extensions: ["js", "jsx"] }),
     new webpack.DefinePlugin({
       __DEV__: env === "development",

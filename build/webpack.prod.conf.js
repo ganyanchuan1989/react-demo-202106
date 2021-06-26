@@ -6,8 +6,6 @@ const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const config = require("./webpack.base.conf");
 
 config.mode = "production";
-config.output.filename = "[name].[chunkhash:6].js";
-config.output.chunkFilename = "[name].[chunkhash:6].js";
 
 config.optimization = {
   splitChunks: {
