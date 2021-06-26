@@ -1,4 +1,8 @@
 {
   "presets": ["@babel/preset-react", "@babel/preset-env"],
-  "plugins": ["@babel/plugin-transform-react-jsx", "react-hot-loader/babel"]
+  "plugins": [
+    "@babel/plugin-transform-react-jsx",
+    "react-hot-loader/babel",
+    ["import", { "libraryName": "antd", "style": true }]
+  ]
 }

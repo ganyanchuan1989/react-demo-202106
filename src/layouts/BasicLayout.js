@@ -1,17 +1,13 @@
-import React, { PureComponent } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { getRouteData } from '../routes';
-import ErrorBoundary from './ErrorBoundary';
+import React, { PureComponent } from "react";
+import { Route, Switch } from "react-router-dom";
+import { getRouteData } from "../routes";
+import ErrorBoundary from "./ErrorBoundary";
 
 const routes = getRouteData();
 /**
  * 主框架
  */
 export default class BasicLayout extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div style={{ minHeight: window.innerHeight }}>
@@ -22,23 +18,22 @@ export default class BasicLayout extends PureComponent {
               path={route.path}
               key={route.path}
               render={(props) => {
-                let Comp = route.component;
-                if (!route.layout) {
+                const Comp = route.component;
+                const Layout = route.layout;
+                if (!Layout) {
                   return (
                     <ErrorBoundary>
                       <Comp {...props} />
                     </ErrorBoundary>
                   );
-                } else {
-                  let Layout = route.layout;
-                  return (
-                    <ErrorBoundary>
-                      <Layout {...props}>
-                        <Comp {...props} />
-                      </Layout>
-                    </ErrorBoundary>
-                  );
                 }
+                return (
+                  <ErrorBoundary>
+                    <Layout {...props}>
+                      <Comp {...props} />
+                    </Layout>
+                  </ErrorBoundary>
+                );
               }}
             />
           ))}
