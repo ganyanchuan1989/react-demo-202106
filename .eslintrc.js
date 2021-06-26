@@ -53,5 +53,6 @@ module.exports = {
     "react/destructuring-assignment": 0,
     "import/prefer-default-export": 0,
     "no-restricted-syntax": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
   },
 };

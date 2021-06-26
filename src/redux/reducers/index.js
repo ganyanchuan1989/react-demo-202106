@@ -1,34 +1,14 @@
 import { combineReducers } from "redux";
-import store from "@/redux/store";
 import userReducer from "@/redux/reducers/user";
-// ================================
-// 同步的 Reducers（即应用初始化所必需的）
-// ================================
+import counterReducer from "@/redux/reducers/counter";
+
 const syncReducers = {
   userData: userReducer,
+  counter: counterReducer,
 };
 
-// ================================
-// 异步加载的 Reducers（Code Splitting 按需加载的）
-// ================================
-const asyncReducers = {};
-
-/**
- * @return {Function} rootReducer
- */
 export function createRootReducer() {
   return combineReducers({
     ...syncReducers,
-    ...asyncReducers,
   });
-}
-
-/**
- * 按需加载时，立即注入对应的 Reducer
- * @param  {String}   key
- * @param  {Function} reducer
- */
-export function injectReducer(key, reducer) {
-  asyncReducers[key] = reducer;
-  store.replaceReducer(createRootReducer()); // 替换当前的 rootReducer
 }

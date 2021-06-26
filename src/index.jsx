@@ -1,20 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import { Provider } from "react-redux";
-// import App from "./app";
-// import store from "./redux/store";
-
+import { Provider } from "react-redux";
 import { hot } from "react-hot-loader/root";
-// const HotApp = hot(App);
+import App from "./app";
+import store from "./redux/store";
 
-// const App = () => <div>Hello Worldssss!</div>;
-const aaa = "aaa";
-// const HotApp = () => (
-//   <Provider store={store}>
-//     <App />
-//   </Provider>
-// );
-const HotApp = () => <div>aaa</div>;
+const HotApp = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+
 hot(HotApp);
 
 ReactDOM.render(<HotApp />, document.getElementById("root"));
