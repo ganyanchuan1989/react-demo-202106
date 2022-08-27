@@ -1,14 +1,12 @@
 import React from "react";
-import "./app.less";
 import { Provider } from "react-redux";
 import { ConfigProvider } from "antd";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import store from "@/redux/store";
 import zhCN from "antd/lib/locale/zh_CN";
+import BasicLayout from "@/components/BasicLayout";
 
-import { getRouteData } from "@/routes";
-import ErrorBoundary from "@/components/ErrorBoundary";
-
+import "./app.less";
 import "@/assets/less/global.less";
 
 if (__DEV__) {
@@ -18,42 +16,12 @@ if (__PROD__) {
   console.info("[当前环境] 线上环境");
 }
 
-const routes = getRouteData();
-
 function App() {
   return (
     <Provider store={store}>
       <ConfigProvider locale={zhCN}>
         <Router>
-          <div>
-            <Switch>
-              {routes.map((route) => (
-                <Route
-                  exact
-                  path={route.path}
-                  key={route.path}
-                  render={(props) => {
-                    const Comp = route.component;
-                    const Layout = route.layout;
-                    if (!Layout) {
-                      return (
-                        <ErrorBoundary>
-                          <Comp {...props} />
-                        </ErrorBoundary>
-                      );
-                    }
-                    return (
-                      <ErrorBoundary>
-                        <Layout {...props}>
-                          <Comp {...props} />
-                        </Layout>
-                      </ErrorBoundary>
-                    );
-                  }}
-                />
-              ))}
-            </Switch>
-          </div>
+          <BasicLayout />
         </Router>
       </ConfigProvider>
     </Provider>

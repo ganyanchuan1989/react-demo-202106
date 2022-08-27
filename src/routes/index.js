@@ -11,31 +11,33 @@ export const getRouteData = () => {
     "/": {
       module: lazyLoad(() => import(/* webpackChunkName: "home" */ "@/views")),
     },
-    "/login": {
+    "/mindMap": {
       module: lazyLoad(() =>
-        import(/* webpackChunkName: "login" */ "@/views/login")
-      ), // 全局刷新：丢失状态
-    },
-    "/main": {
-      module: Main,
+        import(/* webpackChunkName: "error" */ "@/views/mindmap")
+      ),
+      title: "脑图",
     },
     "/counter": {
       module: Counter,
+      title: "计算器",
     },
     "/error": {
       module: lazyLoad(() =>
         import(/* webpackChunkName: "error" */ "@/views/error")
       ),
+      title: "报错",
     },
     "/imgdemo": {
       module: lazyLoad(() =>
         import(/* webpackChunkName: "error" */ "@/views/imgdemo")
       ),
+      title: "图片",
     },
     "/cssdemo": {
       module: lazyLoad(() =>
         import(/* webpackChunkName: "error" */ "@/views/cssdemo")
       ),
+      title: "CSSModule",
     },
     "*": {
       module: lazyLoad(() =>

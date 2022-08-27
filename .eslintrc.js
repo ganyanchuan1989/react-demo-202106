@@ -9,7 +9,7 @@ module.exports = {
     __DEV__: true,
     __PROD__: true,
   },
-  parser: "babel-eslint",
+  parser: "@babel/eslint-parser",
   extends: ["airbnb", "prettier", "plugin:react/recommended"],
   plugins: ["prettier"],
   parserOptions: {
@@ -55,5 +55,10 @@ module.exports = {
     "no-restricted-syntax": 0,
     "jsx-a11y/no-static-element-interactions": 0,
     "global-require": 0,
+    "prefer-const": 0,
+    "react/self-closing-comp": 0,
+    "prefer-template": 0,
+    "react/no-unknown-property": 0,
+    "no-use-before-define": 0,
   },
 };
